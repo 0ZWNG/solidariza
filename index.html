@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solidariedade Ativa</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places"></script> <!-- Google Maps API -->
+</head>
+<body>
+
+<!-- Barra de Acessibilidade -->
+<div class="accessibility-bar">
+    <button onclick="increaseFontSize()">Aumentar Texto</button>
+    <button onclick="decreaseFontSize()">Diminuir Texto</button>
+    <button onclick="toggleHighContrast()">Alto Contraste</button>
+    <button onclick="toggleTextToSpeech()">Leitura Automática</button>
+</div>
+
+<!-- Cabeçalho -->
+<header>
+    <nav>
+        <ul>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#cadastro">Cadastro</a></li>
+            <li><a href="#recursos">Recursos Locais</a></li>
+            <li><a href="#emprego">Vagas de Emprego</a></li>
+            <li><a href="#apoio">Apoio Psicológico</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#doacoes">Doações</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Seção Cadastro de Voluntários e Organizações -->
+<section id="cadastro">
+    <h2>Cadastro de Voluntários e Organizações</h2>
+    <form id="form-cadastro" action="#" method="POST">
+        <fieldset>
+            <legend>Tipo de Cadastro</legend>
+            <label><input type="radio" id="voluntario" name="cadastro" value="voluntario"> Voluntário</label>
+            <label><input type="radio" id="organizacao" name="cadastro" value="organizacao"> Organização</label>
+        </fieldset>
+
+        <div id="form-voluntario" class="form-opts">
+            <label for="nome">Nome:</label><input type="text" id="nome" name="nome" required>
+            <label for="email">E-mail:</label><input type="email" id="email" name="email" required>
+            <label for="telefone">Telefone:</label><input type="tel" id="telefone" name="telefone" required>
+            <label for="tipo-ajuda">Tipo de Ajuda:</label>
+            <select id="tipo-ajuda" name="tipo-ajuda">
+                <option value="alimentos">Alimentos</option>
+                <option value="roupas">Roupas</option>
+                <option value="transporte">Transporte</option>
+                <option value="servicos">Serviços</option>
+            </select>
+            <label for="disponibilidade">Disponibilidade:</label><input type="text" id="disponibilidade" name="disponibilidade" required>
+        </div>
+
+        <div id="form-organizacao" class="form-opts">
+            <label for="nome-org">Nome da Organização:</label><input type="text" id="nome-org" name="nome-org" required>
+            <label for="contato">E-mail de Contato:</label><input type="email" id="contato" name="contato" required>
+            <label for="servicos">Serviços Oferecidos:</label><textarea id="servicos" name="servicos" rows="4"></textarea>
+        </div>
+
+        <button type="submit" id="btn-cadastro">Cadastrar</button>
+    </form>
+</section>
+
+<!-- Seção de Recursos Locais -->
+<section id="recursos">
+    <h2>Encontre Recursos Locais</h2>
+    <div id="mapa">
+        <h3>Mapa Interativo de Serviços</h3>
+        <div id="google-map"></div> <!-- O mapa será exibido aqui -->
+    </div>
+</section>
+
+<!-- Seção de Vagas de Emprego -->
+<section id="emprego">
+    <h2>Vagas de Emprego</h2>
+    <form id="vaga-form">
+        <label for="vaga">Cargo:</label><input type="text" id="vaga" name="vaga">
+        <label for="empresa">Empresa:</label><input type="text" id="empresa" name="empresa">
+        <label for="localizacao">Localização:</label><input type="text" id="localizacao" name="localizacao">
+        <button type="submit">Anunciar Vaga</button>
+    </form>
+</section>
+
+<!-- Seção de Apoio Psicológico -->
+<section id="apoio">
+    <h2>Apoio Psicológico</h2>
+    <ul>
+        <li><strong>Psicólogos Voluntários</strong>: Lista de psicólogos que oferecem atendimento gratuito.</li>
+        <li><strong>Grupos de Apoio</strong>: Conexão entre pessoas em situação de vulnerabilidade.</li>
+        <li><strong>Recursos Anônimos</strong>: Linha direta e chat para ajuda imediata e confidencial.</li>
+    </ul>
+</section>
+
+<!-- Seção Blog -->
+<section id="blog">
+    <h2>Blog</h2>
+    <p>Aqui você encontra artigos sobre as causas da pobreza e da exclusão social.</p>
+    <a href="#">Leia mais</a>
+</section>
+
+<!-- Seção Doações -->
+<section id="doacoes">
+    <h2>Doações</h2>
+    <form action="donate.php" method="POST">
+        <label for="valor">Valor da Doação:</label><input type="number" id="valor" name="valor" required>
+        <label for="tipo-doacao">Tipo de Doação:</label>
+        <select id="tipo-doacao" name="tipo-doacao">
+            <option value="financeira">Financeira</option>
+            <option value="materiais">Materiais</option>
+        </select>
+        <button type="submit">Fazer Doação</button>
+    </form>
+</section>
+
+<!-- Rodapé -->
+<footer>
+    <p>&copy; 2025 Solidariedade Ativa. Todos os direitos reservados.</p>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>
+
